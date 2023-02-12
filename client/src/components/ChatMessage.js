@@ -28,6 +28,7 @@ const ChatMessage = (props) => {
               components={{
                 code({ node, inline, className, children, ...props }) {
                   const match = /language-(\w+)/.exec(className || 'language-js')
+                  console.log(match);
                   return !inline && match ? (
                     <SyntaxHighlighter
                       children={String(children).replace(/\n$/, '')}
@@ -43,7 +44,7 @@ const ChatMessage = (props) => {
 
       <div className="message__pic">
         {
-          ai ? <MdComputer /> : <MdPersonOutline />
+          ai ? <img src="https://i.postimg.cc/Xv1PJJnF/00289-2276255384-design-a-logo-bot-0-2-happy-lovely-panda-0-3-4k-high-resolution-attractive-beaut.png"/> : <MdPersonOutline />
         }
       </div>
     </div>

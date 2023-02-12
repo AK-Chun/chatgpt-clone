@@ -9,7 +9,7 @@ const useMessageCollection = () => {
   const initialMsg = {
     id: 1,
     createdAt: Date.now(),
-    text: '**Hello!** *How can I help you today?*',
+    text: '你好，我是熊猫 AI，有什么可以为您服务的吗？',
     ai: true
   }
   const [messages, setMessages] = useState([initialMsg]);

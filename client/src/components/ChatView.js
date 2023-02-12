@@ -116,12 +116,12 @@ const ChatView = () => {
         <span ref={messagesEndRef}></span>
       </main>
       <form className='form' onSubmit={sendMessage}>
-        <select value={selected} onChange={(e) => setSelected(e.target.value)} className="dropdown" >
+        {/* <select value={selected} onChange={(e) => setSelected(e.target.value)} className="dropdown" >
           <option>{options[0]}</option>
           <option>{options[1]}</option>
-        </select>
+        </select> */}
         <textarea ref={inputRef} className='chatview__textarea-message' value={formValue} onChange={(e) => setFormValue(e.target.value)} />
-        <button type="submit" className='chatview__btn-send' disabled={!formValue}>Send</button>
+        <button type="submit" className='chatview__btn-send' disabled={!formValue}>发送</button>
       </form>
     </div>
   )
