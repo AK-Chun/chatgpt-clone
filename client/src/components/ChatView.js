@@ -54,7 +54,7 @@ const ChatView = () => {
 
     const BASE_URL = process.env.REACT_APP_BASE_URL
     const PATH = aiModel === options[0] ? 'davinci' : 'dalle'
-    const POST_URL = BASE_URL + PATH
+    const POST_URL = BASE_URL + 'api/' + PATH
 
     setThinking(true)
     setFormValue('')

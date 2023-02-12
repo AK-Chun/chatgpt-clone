@@ -46,7 +46,7 @@ app.get('/', (req, res) => {
  * POST /davinci
  * Returns a response from OpenAI's text completion model.
  */
-app.post('/davinci', async (req, res) => {
+app.post('/api/davinci', async (req, res) => {
   // Validate request body
   if (!req.body.prompt) {
     return res.status(400).send({
@@ -91,7 +91,7 @@ A: `,
  * POST /dalle
  * Returns a response from OpenAI's image generation model.
  */
-app.post('/dalle', async (req, res) => {
+app.post('/api/dalle', async (req, res) => {
 
   const prompt = req.body.prompt
 
