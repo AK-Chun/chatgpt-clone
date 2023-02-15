@@ -3,7 +3,6 @@ import cors from 'cors'
 import { Configuration, OpenAIApi } from 'openai'
 import * as dotenv from 'dotenv'
 import Filter from 'bad-words'
-import { ChatGPTAPI } from 'chatgpt'
 
 const filter = new Filter()
 
@@ -14,7 +13,6 @@ try {
   console.error('Error loading environment variables:', error)
   process.exit(1)
 }
-const api = new ChatGPTAPI({ apiKey: process.env.OPENAI_API_KEY })
 
 // Create OpenAI configuration
 const configuration = new Configuration({
