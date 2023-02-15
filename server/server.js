@@ -3,6 +3,7 @@ import cors from 'cors'
 import { Configuration, OpenAIApi } from 'openai'
 import * as dotenv from 'dotenv'
 import Filter from 'bad-words'
+import { ChatGPTAPI } from 'chatgpt'
 
 const filter = new Filter()
 
@@ -13,6 +14,7 @@ try {
   console.error('Error loading environment variables:', error)
   process.exit(1)
 }
+const api = new ChatGPTAPI({ apiKey: process.env.OPENAI_API_KEY })
 
 // Create OpenAI configuration
 const configuration = new Configuration({
@@ -62,6 +64,8 @@ app.post('/api/davinci', async (req, res) => {
 
     const response = await openai.createCompletion({
       model: 'text-davinci-003',
+      // model: 'text-ada-001',
+      // model: 'text-babbage-001',
       prompt: `
 I want you to reply to all my questions in markdown format. 
 Q: ${cleanPrompt}?.
@@ -72,7 +76,7 @@ A: `,
       frequency_penalty: 0.5,
       presence_penalty: 0.2,
     })
-
+    
     console.log(response.data.choices[0].text)
     // Return response from OpenAI API
     res.status(200).send({
