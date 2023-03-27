@@ -61,7 +61,8 @@ app.post('/api/davinci', async (req, res) => {
     console.log(cleanPrompt)
 
     const response = await openai.createCompletion({
-      model: 'text-davinci-003',
+      model: 'gpt-3.5-turbo',
+      // model: 'text-davinci-003',
       // model: 'text-ada-001',
       // model: 'text-babbage-001',
       prompt: `
